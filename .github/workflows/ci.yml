@@ -6,8 +6,8 @@ jobs:
   danger_run:
     runs-on: macOS-latest
     steps:
-      uses: actions/checkout@master
-      name: Danger Run
+    - uses: actions/checkout@master
+    - name: Danger Run
       run: |
         bundle install
         bundle exec fastlane danger_run
