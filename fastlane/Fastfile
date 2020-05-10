@@ -15,7 +15,19 @@
 
 default_platform(:ios)
 
-platform :ios do
+platform :ios do |options|
+
+  lane :danger_run do 
+    danger(
+      danger_id: options[:danger_id],
+      dangerfile: Dangerfile,
+      github_api_token: ["DANGER_GITHUB_API_TOKEN"],
+      verbose: true,
+      fail_on_errors: true,
+      use_bundle_exec: true
+    )
+  end 
+
   lane :build do
     scan(
       project: "WebService.xcodeproj",
