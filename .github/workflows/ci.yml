@@ -9,6 +9,9 @@ jobs:
       uses: actions/checkout@master
       name: Danger Run
       run: |
+        bundle install
+        bundle exec fastlane danger_run
+
 
   build:
     runs-on: macOS-latest
@@ -17,5 +20,5 @@ jobs:
     - name: Build project
       run:  |
         bundle install
-        bundle exec fastlane danger_run
+        bundle exec fastlane build
 
