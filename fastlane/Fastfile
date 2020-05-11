@@ -17,11 +17,14 @@ default_platform(:ios)
 
 platform :ios do |options|
 
-  lane :danger_run do 
+  lane :danger_run do |options|
+
+   puts "token = #{options[:token]}"
+
     danger(
       danger_id: options[:danger_id],
-      dangerfile: Dangerfile,
-      github_api_token: ["DANGER_GITHUB_API_TOKEN"],
+      dangerfile: "Dangerfile",
+      github_api_token: options[:token],
       verbose: true,
       fail_on_errors: true,
       use_bundle_exec: true
