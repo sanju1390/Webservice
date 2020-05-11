@@ -9,12 +9,10 @@ jobs:
     - uses: actions/checkout@master
     - name: Danger Run
       env:
-        export PATH="$HOME/.rbenv/bin:$PATH"
-        eval "$(rbenv init - zsh)"
-        rbenv shell 2.5.0
         token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: |
         bundle install
+        sh ./scripts/configure-shell-env.sh
         bundle exec fastlane danger_run danger_id:"code_analysis" token:"$token"
 
 
