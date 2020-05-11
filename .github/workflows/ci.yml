@@ -12,7 +12,7 @@ jobs:
         token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: |
         bundle install
-        sh ./scripts/configure-shell-env.sh
+        # sh ./scripts/configure-shell-env.sh
         bundle exec fastlane danger_run danger_id:"code_analysis" token:"$token"
 
 
