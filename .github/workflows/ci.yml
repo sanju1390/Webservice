@@ -8,9 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Danger Run
+      env:
+        token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: |
         bundle install
-        bundle exec fastlane danger_run danger_id:"code_analysis"
+        bundle exec fastlane danger_run danger_id:"code_analysis" token:"$token"
 
 
   build:
