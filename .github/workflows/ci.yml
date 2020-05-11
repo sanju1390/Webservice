@@ -10,7 +10,7 @@ jobs:
     - name: Danger Run
       run: |
         bundle install
-        bundle exec fastlane danger_run
+        bundle exec fastlane danger_run danger_id:"code_analysis"
 
 
   build:

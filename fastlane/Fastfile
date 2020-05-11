@@ -17,7 +17,7 @@ default_platform(:ios)
 
 platform :ios do |options|
 
-  lane :danger_run do 
+  lane :danger_run do |options|
     danger(
       danger_id: options[:danger_id],
       dangerfile: Dangerfile,
