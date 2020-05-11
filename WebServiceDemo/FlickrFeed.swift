@@ -10,7 +10,7 @@ import Foundation
 import WebService
 
 struct FlickrFeed: Codable {
-    let title: String
+    let title :String
 }
 
 extension FlickrFeed {
