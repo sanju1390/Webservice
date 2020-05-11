@@ -9,6 +9,9 @@ jobs:
     - uses: actions/checkout@master
     - name: Danger Run
       env:
+        export PATH="$HOME/.rbenv/bin:$PATH"
+        eval "$(rbenv init - zsh)"
+        rbenv shell 2.5.0
         token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: |
         bundle install
@@ -18,7 +21,7 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Build project
       run:  |
         bundle install
