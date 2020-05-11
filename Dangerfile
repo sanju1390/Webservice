@@ -17,7 +17,7 @@ fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 ## SwiftLint Danger
 
 # Give explicit binary path, so that the version stays consistent
-swiftlint.binary_path = "/usr/local/bin/swiftlint"
+swiftlint.binary_path = "Pods/SwiftLint/swiftlint"
 
 # Set max violations count = 20, to avoid problems with big PRs.
 swiftlint.max_num_violations = 20
