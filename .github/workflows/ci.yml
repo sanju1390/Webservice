@@ -3,20 +3,19 @@ name: CI
 on: pull_request 
 
 jobs:
-  danger_run:
+  Code_Analysis:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@master
-    - name: Danger Run
+    - name: Code Analysis
       env:
         token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: |
         bundle install
-        # sh ./scripts/configure-shell-env.sh
         bundle exec fastlane danger_run danger_id:"code_analysis" token:"$token"
 
 
-  build:
+  Build:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@master
