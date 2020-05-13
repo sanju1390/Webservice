@@ -72,18 +72,8 @@ disabled_rules: # rule identifiers to exclude from running
 #   - fatal_error_message
 #   - sorted_imports
 
-# excluded:
-#   - Pods  # exclude pods directory from linting.
-#   ## We can't use glob pattern '**/*Test?.swift' to exclude all test files because our config file `swiftlint.yml` is not in project's root directory, 
-#   ## Here is the open issue for the same - https://github.com/realm/SwiftLint/issues/3036 .
-#   ## Todo : Remove below hardcoded paths to testfiles and use glob pattern once above mentioned bug is fixed. [open source contribution opportunity ;)] 
-#   - ConfigurationKit/ConfigurationKitTests
-#   - RegionKit/RegionKitTests
-#   - GoRideNewTests
-#   - TransportUITests
-
-#   # - RegionResolutionTests.swift
-#   # - SpoofLocationTests.swift
+ excluded:
+   - Pods  # exclude pods directory from linting.
 
 cyclomatic_complexity:
     ignores_case_statements: true
