@@ -20,7 +20,9 @@ extension Resource {
         var urlComponents = URLComponents(string: url)!
         urlComponents.queryItems = parameters?.compactMap({ URLQueryItem(name: $0.key, value: String(describing: $0.value)) })
         self.urlRequest = URLRequest(url: urlComponents.url!)
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        self.urlRequest.addValue("Client-ID Dk7qkNc2txYeya35NgiQM_K5_aOa4770m381ykenv7E", forHTTPHeaderField: "Authorization")
+
+        self.urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         self.parse = { response in
             return Result(catching: {

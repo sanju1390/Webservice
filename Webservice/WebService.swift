@@ -24,6 +24,8 @@ public class WebService: WebServiceProtocol {
         print("Release in framework")
         #endif
         
+        print("headers = \(resource.urlRequest.allHTTPHeaderFields)")
+        
         URLSession.shared.dataTask(with: resource.urlRequest) { (data, response, error) in
             let sessionResponse = URLSessionResponse(data: data, response: response, error: error)
             DispatchQueue.main.async {

@@ -1,6 +1,0 @@
-framework module Pods_WebServiceDemo_WebServiceDemoUITests {
-  umbrella header "Pods-WebServiceDemo-WebServiceDemoUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
