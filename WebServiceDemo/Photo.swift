@@ -22,6 +22,4 @@ extension Photo {
     static func getAll() -> Resource<[Photo]> {
         return Resource<[Photo]>(get: "https://api.unsplash.com/photos")
     }
-
 }
-
