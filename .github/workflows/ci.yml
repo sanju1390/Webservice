@@ -3,11 +3,11 @@ name: CI
 on: pull_request 
 
 jobs:
-  danger_run:
+  Code_Analysis:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@master
-    - name: Danger Run
+    - name: Code Analysis
       env:
         token: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: |
@@ -15,10 +15,10 @@ jobs:
         bundle exec fastlane danger_run danger_id:"code_analysis" token:"$token"
 
 
-  build:
+  Build:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Build project
       run:  |
         bundle install
