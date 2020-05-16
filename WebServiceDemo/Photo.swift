@@ -10,7 +10,7 @@ import Foundation
 import WebService
 
 struct Photo: Codable {
-    let id: String
+    let id :String
     let urls: PhotoUrl
 }
 
